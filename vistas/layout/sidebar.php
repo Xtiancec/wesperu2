@@ -6,7 +6,7 @@
             <ul id="sidebarnav">
                 <!-- ======================MODULO CONFIGURACION======================================== -->
 
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">CONFIGURACION <span class="label label-rouded label-themecolor pull-right">9</span></span></a>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu"><b>CONFIGURACION</b> <span class="label label-rouded label-themecolor pull-right">9</span></span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li class="nav-devider">General</li>
                         <li><a href="area.php">Areas </a></li>
@@ -22,6 +22,7 @@
                         <li><a href="tipocomprobante.php">Tipo Comprobante</a></li>
                     </ul>
                 </li>
+                             
 
                 <li class="nav-devider"></li>
                 <!-- ============================MODULO ALMACEN================================== -->
@@ -62,7 +63,7 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-switch"></i><span class="hide-menu"> REQUERIMIENTOS</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="requerimiento.php"><i class="fa fa-money"></i> Registrar Requerimientos</a></li>
-                        <li><a href="estadoEmpleado.php"><i class="mdi mdi-account-settings-variant"></i> Autorizar Requerimientos</a></li>
+                        <li><a href="autorizarrequerimiento.php"><i class="mdi mdi-account-settings-variant"></i> Autorizar Requerimientos</a></li>
                         <li><a href="empleado.php"><i class="mdi mdi-account-multiple-plus"></i> Registrar Empleado</a></li>
                     </ul>
                 </li>

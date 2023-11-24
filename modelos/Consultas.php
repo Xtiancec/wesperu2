@@ -227,6 +227,7 @@ public function salidaMartes(){
 	$sql="SELECT SUM(cantidad * costoUnitario) AS salidaMartes FROM salida WHERE WEEK(fecha) = WEEK(NOW()) AND DAYOFWEEK(fecha) =3;";
 	return ejecutarConsulta($sql);
 }
+
 public function salidaMiercoles(){
 	$sql="SELECT SUM(cantidad * costoUnitario) AS salidaMiercoles FROM salida WHERE WEEK(fecha) = WEEK(NOW()) AND DAYOFWEEK(fecha) =4;";
 	return ejecutarConsulta($sql);

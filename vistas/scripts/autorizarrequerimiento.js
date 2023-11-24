@@ -75,7 +75,7 @@ function listar() {
 			'pdf'
 		],
 		"ajax": {
-			url: '../controlador/requerimiento.php?op=listar',
+			url: '../controlador/requerimiento.php?op=listarporautorizar',
 			type: "get",
 			dataType: "json",
 			error: function (e) {

@@ -1,29 +1,70 @@
-<?php 
+<?php
 //incluir la conexion de base de datos
 require "../config/Conexion.php";
-class Empleado{
-	//implementamos nuestro constructor
-public function __construct(){
-}
+class Empleado
+{
+    //implementamos nuestro constructor
+    public function __construct()
+    {
+    }
 
-//metodo insertar regiustro
-public function insertar($idCargo,$idBanco,$tipoDocumento,$numeroDocumento,$nombre,$apellidoPaterno,$apellidoMaterno,
-$telefono,$personaContacto,$telefonoEmergencia,$correo,$direccion,$distrito,$fechaNacimiento,$fechaIngreso,$tipoSeguro,$fechaSeguroVida,
-$numeroCuenta,$informacionAdicional,$estado){
-	$sql="INSERT INTO empleado (idCargo,idBanco,tipoDocumento,numeroDocumento,nombre,apellidoPaterno,apellidoMaterno,
+    //metodo insertar regiustro
+    public function insertar(
+        $idCargo,
+        $idBanco,
+        $tipoDocumento,
+        $numeroDocumento,
+        $nombre,
+        $apellidoPaterno,
+        $apellidoMaterno,
+        $telefono,
+        $personaContacto,
+        $telefonoEmergencia,
+        $correo,
+        $direccion,
+        $distrito,
+        $fechaNacimiento,
+        $fechaIngreso,
+        $tipoSeguro,
+        $fechaSeguroVida,
+        $numeroCuenta,
+        $informacionAdicional,
+        $estado
+    ) {
+        $sql = "INSERT INTO empleado (idCargo,idBanco,tipoDocumento,numeroDocumento,nombre,apellidoPaterno,apellidoMaterno,
     telefono,personaContacto,telefonoEmergencia,correo,direccion,distrito,fechaNacimiento,
     fechaIngreso,tipoSeguro,fechaSeguroVida,numeroCuenta,informacionAdicional,estado)
     
 	 VALUES ('$idCargo','$idBanco','$tipoDocumento','$numeroDocumento','$nombre','$apellidoPaterno','$apellidoMaterno',
      '$telefono','$personaContacto','$telefonoEmergencia','$correo',
      '$direccion','$distrito','$fechaNacimiento','$fechaIngreso','$tipoSeguro','$fechaSeguroVida','$numeroCuenta','$informacionAdicional','$estado')";
-	return ejecutarConsulta($sql);
-}
+        return ejecutarConsulta($sql);
+    }
 
-public function editar($idEmpleado,$idCargo,$idBanco,$tipoDocumento,$numeroDocumento,$nombre,$apellidoPaterno,$apellidoMaterno,
-$telefono,$personaContacto,$telefonoEmergencia,$correo,$direccion,$distrito,$fechaNacimiento,$fechaIngreso,$tipoSeguro,$fechaSeguroVida,
-$numeroCuenta,$informacionAdicional,$estado){
-	$sql="UPDATE empleado SET 
+    public function editar(
+        $idEmpleado,
+        $idCargo,
+        $idBanco,
+        $tipoDocumento,
+        $numeroDocumento,
+        $nombre,
+        $apellidoPaterno,
+        $apellidoMaterno,
+        $telefono,
+        $personaContacto,
+        $telefonoEmergencia,
+        $correo,
+        $direccion,
+        $distrito,
+        $fechaNacimiento,
+        $fechaIngreso,
+        $tipoSeguro,
+        $fechaSeguroVida,
+        $numeroCuenta,
+        $informacionAdicional,
+        $estado
+    ) {
+        $sql = "UPDATE empleado SET 
      idEmpleado='$idEmpleado',
      idCargo='$idCargo',
      idBanco='$idBanco',
@@ -47,19 +88,21 @@ $numeroCuenta,$informacionAdicional,$estado){
      estado='$estado'
 
 	WHERE idEmpleado='$idEmpleado'";
-	return ejecutarConsulta($sql);
-}
+        return ejecutarConsulta($sql);
+    }
 
 
-//metodo para mostrar registros
-public function mostrar($idEmpleado){
-	$sql="SELECT * FROM empleado WHERE idEmpleado='$idEmpleado'";
-	return ejecutarConsultaSimpleFila($sql);
-}
+    //metodo para mostrar registros
+    public function mostrar($idEmpleado)
+    {
+        $sql = "SELECT * FROM empleado WHERE idEmpleado='$idEmpleado'";
+        return ejecutarConsultaSimpleFila($sql);
+    }
 
-//listar registros 
-public function listar(){
-	$sql="SELECT 
+    //listar registros 
+    public function listar()
+    {
+        $sql = "SELECT 
     empleado.idEmpleado,
     empleado.idCargo,
     empleado.idBanco,
@@ -81,12 +124,13 @@ public function listar(){
     FROM empleado
     inner join banco on banco.idBanco=empleado.idBanco
     inner join cargo on cargo.idCargo=empleado.idCargo";
-	return ejecutarConsulta($sql);
-}
+        return ejecutarConsulta($sql);
+    }
 
-//listar registros activos
-public function listarActivos(){
-    $sql="SELECT 
+    //listar registros activos
+    public function listarActivos()
+    {
+        $sql = "SELECT 
     empleado.idEmpleado,
     empleado.idCargo,
     empleado.idBanco,
@@ -108,10 +152,9 @@ public function listarActivos(){
     
     WHERE empleado.estado='LABORANDO'";
 
-	return ejecutarConsulta($sql);
-}
+        return ejecutarConsulta($sql);
+    }
 
-//implementar un metodo para listar los activos, su ultimo precio y el stock(vamos a unir con el ultimo registro de la tabla detalle_ingreso)
+    //implementar un metodo para listar los activos, su ultimo precio y el stock(vamos a unir con el ultimo registro de la tabla detalle_ingreso)
 
 }
- ?>

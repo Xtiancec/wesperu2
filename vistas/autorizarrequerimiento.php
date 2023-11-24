@@ -1,6 +1,8 @@
 <?php
 //activamos almacenamiento en el buffer
 
+
+
 ob_start();
 session_start();
 if (!isset($_SESSION['login'])) {
@@ -49,10 +51,9 @@ if (!isset($_SESSION['login'])) {
                             <table id="tbllistado" class="table table-bordered table-condensed table-hover">
                                 <thead style="background-color: #000000; color: white;">
                                     <th style="width: 10%;">FECHA</th>
-                                    <th style="width: 10%;">CORRELATIVO</th>
-                                    <th style="width: 10%;">ORDEN TRABAJO</th>
-                                    <th style="width: 10%;">USUARIO</th>
-                                    <th style="width: 30%;">EMPLEADO</th>
+                                    <th style="width: 20%;">CORRELATIVO</th>
+                                    <th style="width: 20%;">ORDEN TRABAJO</th>
+                                    <th style="width: 20%;">USUARIO</th>
                                     <th style="width: 10%;">TIPO SALIDA</th>
                                     <th style="width: 10%;">ESTADO</th>
                                     <th style="width: 10%;">OPCIONES</th>
@@ -82,6 +83,17 @@ if (!isset($_SESSION['login'])) {
                                                 <select name="idTipoSalida" id="idTipoSalida" class="select2 form-control custom-select" style="width:100%; height:100%;" required onchange="generarCorrelativo()">
                                                 </select>
                                             </div>
+                                        </div>
+
+                                        <div class="form-group col-lg-3 col-md-3 col-xs-12">
+                                            <label for=""><b>Estado(*): </b></label>
+                                            <select name="estado" id="estado" class="select form-control" style="width:100%; height:100%;" required>
+                                                <option value="Pendiente">Pendiente</option>
+                                                <option value="Pendiente de Autorización">Pendiente de Autorización</option>
+                                                <option value="Incompleto">Incompleto</option>
+                                                <option value="Completo">Completo</option>
+
+                                            </select>
                                         </div>
 
                                         <div class="row">
@@ -212,7 +224,7 @@ if (!isset($_SESSION['login'])) {
     }
     require 'layout/footer.php';
     ?>
-    <script src="scripts/requerimiento.js">
+    <script src="scripts/autorizarrequerimiento.js">
     </script>
 <?php
 }
